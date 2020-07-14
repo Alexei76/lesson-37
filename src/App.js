@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {TodoList} from './TodoList';
 
 class App extends Component {
   constructor(props){
@@ -46,16 +47,7 @@ render() {
     </div>
     <button onClick = {this.handleAddItem} id="todo-add">Add</button>
     </div>
-    <ul className="todolist" id="todolist">
-            {this.state.todos.length ? (
-              this.state.todos.map((item) => {
-                return (<li>
-                  <input type="checkbox" /> 
-                  <span className={item.status ? 'complete' : '' }>{item.text}</span>
-                </li>)
-              })
-            ) : null}
-          </ul>
+    <TodoList todos={this.state.todos}/>
     </div>
     </div>
   );
