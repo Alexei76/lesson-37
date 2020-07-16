@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { TodoList } from './TodoList';
+import { TodoList } from './TodoComponents/TodoList';
 
 class App extends Component {
   constructor(props){
@@ -47,7 +47,7 @@ render() {
     </div>
     <button onClick = {this.handleAddItem} id="todo-add">Add</button>
     </div>
-    <TodoList todos = {[]} />
+    <TodoList todos = {this.state.todos} />
     </div>
     </div>
   );
