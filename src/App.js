@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Button } from './uielements/Button';
 import { TodoList } from './TodoComponents/TodoList';
 
 class App extends Component {
@@ -45,7 +46,8 @@ render() {
     <span id="total-done"></span>
     
     </div>
-    <button onClick = {this.handleAddItem} id="todo-add">Add</button>
+    <Button onClick = {this.handleAddItem} id="todo-add">Add</Button>
+    
     </div>
     <TodoList todos = {this.state.todos} />
     </div>
