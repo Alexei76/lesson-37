@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+import { TodoItem } from './TodoItem';
 
 
 export function TodoList(props){
@@ -7,7 +8,9 @@ return (
 <ul className="todolist" id="todolist">
   {
   props.todos.map((item) => {
-  return (<li><input type="checkbox" /> <span className={item.status ? 'complete' : '' }>{item.text}</span></li>)}) }
+  return (<TodoItem key = { item.id } item={item}/>)
+  }) 
+  }
   </ul>
 )
 
