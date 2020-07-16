@@ -14,6 +14,7 @@ ul.todolist li {padding: 6px 9px;
 h1 {
   text-align: center;
 }
+ul#todolist.todolist button{float:right;}
 .todo-component {
   display: flex;
   flex-flow: column;
