@@ -29,6 +29,36 @@ class App extends Component {
     })
 
   }
+
+  handleItemStatusToggle = (itemId) => {
+    const tempState = this.state.todos.map(todo => {
+      if(todo.id === itemId) {
+        todo.status = !todo.status
+      }
+      return todo;      
+    })
+    this.setState({
+      todos: tempState
+    }, () => {
+      localStorage.setItem('todos', JSON.stringify(this.state.todos))
+    })
+  }
+
+  handleItemRemove = (itemId) => {
+    const tempState = this.state.todos.filter(todo => {
+      if(todo.id !== itemId) {
+        return todo
+      }
+    })
+    this.setState({
+      todos: tempState
+    }, () => {
+      localStorage.setItem('todos', JSON.stringify(this.state.todos))
+    })
+  }
+
+
+
 render() { 
   console.log(this.state.todos)
   return (
@@ -49,7 +79,7 @@ render() {
     <Button onClick = {this.handleAddItem} id="todo-add">Add</Button>
     
     </div>
-    <TodoList todos = {this.state.todos} />
+    <TodoList handleItemRemove={this.handleItemRemove} handleItemStatusToggle={this.handleItemStatusToggle} todos={this.state.todos} />
     </div>
     </div>
   );

@@ -1,10 +1,12 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Button = styled.button`
-cursor: pointer;
-height: 32px;
-width: 64px;
-background-color: #eaeaea;
-border-radius: 5px;
+    height: 32px;
+    width: 64px;
+    background-color: #eaeaea;
+    border-radius: 5px;
+`
 
+export const RemoveButton = styled(Button)`
+    background-color: red;
 `

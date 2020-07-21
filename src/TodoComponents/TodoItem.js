@@ -1,14 +1,14 @@
 import React from 'react';
-import { Button } from '../uielements/Button';
-import { TodoListItem } from '../uielements/TodoListItem';
+import { RemoveButton } from '../uielements/Button'
+
 
 export function TodoItem(props){
-    return(
-        <TodoListItem><input type="checkbox" /> 
-        <span className={props.item.status ? 'complete' : '' }>
-            {props.item.text}</span>
-            <Button>Remove</Button>
-            </TodoListItem>
+    return (
+        <li className={props.item.status ? 'todolist__item complete' : 'todolist__item'}>
+            <input onChange={() => props.handleItemStatusToggle(props.item.id)} checked={props.item.status} type="checkbox" />
+            <span>{props.item.text}</span>
+            <RemoveButton onClick={() => props.handleItemRemove(props.item.id)}>Remove</RemoveButton>
+        </li>
     )
 
 }
